@@ -3,172 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unity Developer Portfolio</title>
+    <title>Febin Jose | Unity Developer Portfolio</title>
     <style>
         :root {
-            --bg-color: #121212;
-            --card-bg: #1e1e1e;
-            --accent-color: #00bcd4; /* Unity-ish Blue/Cyan */
-            --text-main: #ffffff;
-            --text-dim: #b0b0b0;
+            --bg: #0b0e11;
+            --card: #15191d;
+            --accent: #00f2ff;
+            --text-main: #f0f0f0;
+            --text-dim: #a0a0a0;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
             color: var(--text-main);
-            line-height: 1.6;
             margin: 0;
-            padding: 0;
+            line-height: 1.6;
         }
 
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 2rem; }
+
+        /* Header */
         header {
-            padding: 4rem 2rem;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            background: linear-gradient(180deg, #000 0%, var(--bg-color) 100%);
+            background: linear-gradient(to bottom, #0b0e11, #15191d);
         }
 
-        .container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 0 2rem;
+        h1 { font-size: 4rem; margin: 0; letter-spacing: -2px; text-transform: uppercase; }
+        .subtitle { color: var(--accent); font-size: 1.2rem; font-weight: bold; margin-top: 10px; }
+        
+        .links { margin-top: 2rem; }
+        .links a {
+            color: var(--text-main);
+            text-decoration: none;
+            border: 1px solid var(--text-dim);
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: 0.3s;
         }
+        .links a:hover { border-color: var(--accent); color: var(--accent); }
 
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
+        /* Project Section */
+        .section-title { border-left: 4px solid var(--accent); padding-left: 15px; margin: 4rem 0 2rem; }
 
         .project-card {
-            background: var(--card-bg);
-            border-radius: 8px;
+            background: var(--card);
+            border-radius: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
             overflow: hidden;
-            transition: transform 0.3s ease;
-            border: 1px solid #333;
+            border: 1px solid #222;
         }
 
-        .project-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-color);
-        }
-
-        .project-image {
-            width: 100%;
-            height: 200px;
-            background: #333; /* Placeholder */
-            object-fit: cover;
-        }
-
-        .project-content {
-            padding: 1.5rem;
-        }
+        .project-img { flex: 1; min-width: 300px; background: #252a30; min-height: 250px; }
+        .project-info { flex: 1.5; padding: 2.5rem; min-width: 300px; }
 
         .tag {
-            display: inline-block;
-            background: #333;
-            color: var(--accent-color);
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
+            background: rgba(0, 242, 255, 0.1);
+            color: var(--accent);
+            padding: 4px 12px;
+            border-radius: 20px;
             font-size: 0.8rem;
-            margin-bottom: 0.5rem;
+            margin-right: 8px;
         }
 
-        .skills-section {
-            background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 8px;
-            margin: 4rem 0;
-        }
-
-        h1, h2 { color: var(--accent-color); }
-        a { color: var(--accent-color); text-decoration: none; }
-        a:hover { text-decoration: underline; }
-    </style>
-</head>
-<body>
-
-    <header>
-        <h1>[YOUR NAME]</h1>
-        <p>Unity Game Developer | C# Programmer | Technical Artist</p>
-        <div style="margin-top: 1rem;">
-            <a href="#">GitHub</a> • <a href="#">LinkedIn</a> • <a href="#">Itch.io</a>
-        </div>
-    </header>
-
-    <div class="container">
-        
-        <section id="projects">
-            <h2>Featured Projects</h2>
-            <div class="project-grid">
-                
-                <div class="project-card">
-                    <img src="project1-thumbnail.jpg" alt="Game Screenshot" class="project-image">
-                    <div class="project-content">
-                        <span class="tag">C# / URP</span>
-                        <h3>Project Shadow Runner</h3>
-                        <p>A fast-paced 3D platformer featuring a custom parkour controller and GPU-accelerated VFX.</p>
-                        <ul>
-                            <li>Implemented Object Pooling for projectiles.</li>
-                            <li>Designed custom Shaders via Shader Graph.</li>
-                        </ul>
-                        <a href="#">View Source Code →</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <img src="project2-thumbnail.jpg" alt="Game Screenshot" class="project-image">
-                    <div class="project-content">
-                        <span class="tag">Mobile / Optimization</span>
-                        <h3>Neon Drift</h3>
-                        <p>Mobile racing game optimized for mid-range Android/iOS devices.</p>
-                        <ul>
-                            <li>Reduced draw calls by 50% using Static Batching.</li>
-                            <li>Integrated Unity Ads and IAP.</li>
-                        </ul>
-                        <a href="#">Play on Itch.io →</a>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <section class="skills-section">
-            <h2>Technical Skillset</h2>
-            <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
-                <div>
-                    <h4>Engine & Tools</h4>
-                    <ul>
-                        <li>Unity 2022.3 LTS</li>
-                        <li>Addressables & AssetBundles</li>
-                        <li>Git / PlasticSCM</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Graphics</h4>
-                    <ul>
-                        <li>Universal Render Pipeline (URP)</li>
-                        <li>Post-Processing Stack</li>
-                        <li>Blender (Basic Modeling)</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Programming</h4>
-                    <ul>
-                        <li>Design Patterns (Singleton, State)</li>
-                        <li>REST API Integration</li>
-                        <li>LINQ & Data Structures</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-    </div>
-
-    <footer style="text-align: center; padding: 2rem; color: var(--text-dim);">
-        <p>&copy; 2024 [Your Name]. Built with HTML & CSS.</p>
-    </footer>
-
-</body>
-</html>
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin
